@@ -33,6 +33,12 @@ const char index_html[] PROGMEM = R"rawliteral(
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+
+      .container {
+        padding: 1rem;
+        max-width: 28rem;
+        margin: 0 auto;
+      }
     
       h1 {
         font-size: 2.25rem;
@@ -40,14 +46,12 @@ const char index_html[] PROGMEM = R"rawliteral(
         text-align: center;
         letter-spacing: -0.025em;
         scroll-margin: 5rem;
-        padding: 1rem;
       }
 
       .controller {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem;
       }
 
       button {
@@ -70,13 +74,15 @@ const char index_html[] PROGMEM = R"rawliteral(
   </head>
 
   <body>
-    <h1>ESP8266 Web Server</h1>
+    <main class="container">
+      <h1>ESP8266 Web Server</h1>
 
-    <section class="controller">
-      <button data-led="16">Toggle LED 1</button>
-      <button data-led="5">Toggle LED 2</button>
-      <button data-led="4">Toggle LED 3</button>
-    </section>
+      <section class="controller">
+        <button data-led="16">Toggle LED 1</button>
+        <button data-led="5">Toggle LED 2</button>
+        <button data-led="4">Toggle LED 3</button>
+      </section>
+    </main>
 
     <script>
       const buttons = document.querySelectorAll("button");
